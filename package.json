@@ -1,7 +1,8 @@
 {
-	"name": "persevere-example-wiki",
-	"author": "",
-	"dependencies": ["persevere"],
+	"name": "cpr",
+	"dependencies": {
+		"pintura": "0.2.1"
+	},
 	"contributors": [],
 	"mappings":{
 		"perstore": "http://github.com/kriszyp/perstore/zipball/master",
