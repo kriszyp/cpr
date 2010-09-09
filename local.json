@@ -1,0 +1,32 @@
+{
+	"//": "For production, you would normally want the number of processes to match the number of cores, but for debugging, using 1 is much easier:",
+	"processes": 2,
+	"//": "This is the HTTP port to listen on:",
+	"port": 8080,
+	"//": "Indicates whether the console should run",
+	"repl": true,
+	"//": "Indicates a TCP/port connection for the console (omit to disable)",
+	"replPort": 5555,
+	"//": "Database settings",
+	"database": {
+		"connection":"jdbc:mysql://localhost/wiki?user=root&useUnicode=true&characterEncoding=utf-8&autoReconnect=true",
+		"type": "mysql",
+		"host": "localhost",
+		"username": "root",
+		"password": "root",
+		"name": "test",
+		"socket": "/Applications/MAMP/tmp/mysql/mysql.sock"
+	},
+	"mail": {
+		"host":"mail.site.com",
+		"defaultFrom": "app@site.com"
+	},
+	"security":{
+		"//": "Bypass security for initial setup",
+		"bypass": true,
+		"//": "List of admins",
+		"admins":["kris"]
+	},
+	"//": "Default location of data",
+	"dataFolder": "data"
+}

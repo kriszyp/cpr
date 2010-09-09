@@ -1,0 +1,4 @@
+{
+	"(jar:)?http://github.com/kriszyp/([^\/]+)/zipball/[^\/]+!?" : "/Volumes/Persevere/packages/$2",
+	"useSetInterval": true
+}
