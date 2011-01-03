@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dojo Foundation Packages</title>
+    </head>
+    <style>
+    	.row {
+    		clear: both;
+    	}
+    	.name {
+    		display: block;
+    		width: 100px;
+    		float: left;
+    	}
+    	.description {
+    		float: left;
+    		overflow: hidden;
+    	}
+    </style>
+    <script src="js/dojo/dojo.js"></script>
+    <script>
+    	dojo.require("dojo.hash");
+    	dojo.ready(function(){
+    		onHashChange(location.hash);
+    	});
+    	dojo.subscribe("/dojo/hashchange", onHashChange);
+    	function onHashChange(id){
+    		if(id && id.charAt(0) == "#"){
+    			id = id.substring(1);
+    		}
+    		dojo.xhrGet({
+    			url:id || "./",
+    			handleAs:"json"
+    		}).then(function(response){
+    			var listElement = dojo.byId("list");
+    			listElement.innerHTML = "";
+    			if(id){
+    				dojo.byId("header").innerHTML = id;
+    				response = response.versions;
+    			}else{
+    				dojo.byId("header").innerHTML = "Dojo Foundation Packages";
+    			}
+    			for(var i in response){
+    				if(i != "id"){
+	    				var row = dojo.create("div",{
+	    					className: "row"
+	    				},listElement);
+	    				dojo.create(id ? "div" : "a",{
+	    					className: "name",
+	    					innerHTML: i,
+	    					href: "#" + i
+	    				}, row);
+	    				if(id){
+	    					if(response[i] && response[i].dist){
+			    				dojo.create("div",{
+			    					className: "description",
+			    					innerHTML: '<a href="' + response[i].dist.zip + '">download zip</a><br>' +
+			    							'<a href="' + response[i].dist.tarball + '">download tarball</a><br>' +
+			    							(response[i].dependencies ? 'Dependencies: ' + (function(dependencies){
+			    								var asHtml = "";
+			    								for(var i in dependencies){
+			    									asHtml += '<a href="#' + i + '">' + i + '</a> ' + dependencies[i];
+			    								}
+			    								return asHtml;
+			    							})(response[i].dependencies) : '')
+			    				}, row);
+			    			}
+	    				}else{
+		    				dojo.create("div",{
+		    					className: "description",
+		    					innerHTML: response[i].description || ""
+		    				}, row);
+	    				}
+	    			}
+    			}
+    		});
+    	}
+    </script>
+    <body>
+    	<h1 id="header"></h1>
+    	<div><a href="submit.html">Submit a new package or version to the Dojo foundation package registry.</a></div>
+    	<div>Packages available:</div>
+    	<div id="list"></div>
+    </body>
+</html>
