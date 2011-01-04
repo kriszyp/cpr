@@ -9,7 +9,7 @@
     	}
     	.name {
     		display: block;
-    		width: 100px;
+    		width: 200px;
     		float: left;
     	}
     	.description {
@@ -78,7 +78,13 @@
     </script>
     <body>
     	<h1 id="header"></h1>
-    	<div><a href="submit.html">Submit a new package or version to the Dojo foundation package registry.</a></div>
+    	<div>It is recommended that you install packages with the 
+    		<a href="http://github.com/kriszyp/cpm">CommonJS Package Manager</a>
+    		which automatically installs dependencies, handles versioning, and sets up package
+    		configuration for your module loader,
+    		but you can also download packages directly from this site (take care to install
+    		dependencies of packages as well).</div>
+    	<div>You can <a href="submit.html">submit a new package or version to this package registry here.</a></div>
     	<div>Packages available:</div>
     	<div id="list"></div>
     </body>
