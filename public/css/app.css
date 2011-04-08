@@ -1,0 +1,107 @@
+/*@import url("/packages/dojo-mobile/themes/iphone/iphone.css") only screen(iphone);
+@import url("/packages/dojo-mobile/themes/android/android.css") only screen(android);*/
+@import url("./claro.css") screen;
+
+#list{
+	left: inherit;
+	position: absolute;
+	top: 110px;
+	bottom: 50px;
+	border: none;
+	width: 780px;
+	border: 1px solid #aaa;
+	margin: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 2px #888;
+	background: -webkit-gradient(linear, left top, left bottom, from(#def), to(#fff), color-stop(0.5, #fff));
+	store: store;
+	widget: require('d-list/OnDemandTable');
+	/id {
+		widget: require('d-list/Tree');
+		sortable: true;
+		width: 100px;
+	};
+	/name {
+		sortable: true;
+		width: 200px;
+	};
+}
+
+.d-list-header {
+	font-size: 1.5em;
+	padding: 10px;
+}
+.d-list-row {
+	padding: 10px;
+}
+.d-list-row img{
+	float: left;
+	margin-right: 10px;
+	height: 32px;
+	width: 32px;
+}
+.d-list-row .name{
+	float: left;
+	width: 400px;
+}
+.d-list-row .license {
+	float: left;
+	width: 100px;
+}
+
+.d-list-scroller {
+	top: 45px;
+}
+.branch-name {
+	clear: both;
+}
+.branch-description{
+	margin-left: 20px;
+}
+.cla-approved  span{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	background-image: url(http://dojofoundation.org/images/icons/check.png);
+}
+
+/*@appearance {
+	appearance: range;
+	src: module('dijit/HorizontalSlider');
+}
+@appearance range (not input-range){
+	appearance: range;
+	src: module('dijit/HorizontalSlider');
+}*/
+input[type=range]{
+	appearance: range, module('dijit/HorizontalSlider');
+	
+}
+#footer{
+	position: absolute;
+	content: '<div>built with <a href="http://github.com/kriszyp/xstyle">XStyle</a></div>';
+	height: 50px;
+	bottom: 0px;	
+}
+
+/* could also do @import /packages/my-widget/css/claro-for-widget.css screen and (rule: .claro)
+/ or @import /packages/dijit/themes/claro/Checkbox.css screen and (not missing-module: dijit/form/Checkbox)*/
+
+.d-list-row:hover {
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: .3s;
+	background-color: #eff;
+}
+#package-setup {
+	float: right;
+	width: 150px;
+	border: 1px solid #aaa;
+	-webkit-border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+	-webkit-box-shadow: 1px 1px 2px #888;
+	background: -webkit-gradient(linear, left top, left bottom, from(#def), to(#fff), color-stop(0.5, #fff));
+}
+#package-setup div{
+	margin-bottom: 30px;
+}
