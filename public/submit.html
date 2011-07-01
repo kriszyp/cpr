@@ -6,8 +6,15 @@
     <body>
     	<form method="POST" action="/">
     		<div>Enter the URL of your package you want to submit (like http://github.com/yourname/project): </div>
-    		<input type="text" name="url" value="https://github.com/" style="width: 300px" />
+    		<input type="url" name="url" value="https://github.com/" style="width: 300px" />
+    		<div>To link to your package from the NPM registry (this will make it available for installation in Node through NPM, only do this if your package is Node compatible):     		
+    			<input type="checkbox" name="npm" />
+    		</div>
     		<input type="submit" />
+    		<div>
+    		A template for creating packages for this repository is available here: 
+    		<a href="http://github.com/kriszyp/commonjs-package-template">http://github.com/kriszyp/commonjs-package-template</a>.
+    		</div>
     	</form>
     </body>
 </html>
