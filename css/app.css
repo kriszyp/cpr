@@ -1,6 +1,6 @@
 /*@import url("/packages/dojo-mobile/themes/iphone/iphone.css") only screen(iphone);
 @import url("/packages/dojo-mobile/themes/android/android.css") only screen(android);*/
-@import url("./claro.css") screen;
+@import url("/packages/dgrid/css/skins/claro.css") screen;
 
 #list{
 	left: inherit;
@@ -11,13 +11,13 @@
 	width: 780px;
 	border: 1px solid #aaa;
 	margin: 5px;
-	-webkit-border-radius: 5px;
-	-webkit-box-shadow: 1px 1px 2px #888;
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px #888;
 	background: -webkit-gradient(linear, left top, left bottom, from(#def), to(#fff), color-stop(0.5, #fff));
 	store: store;
-	widget: require('d-list/OnDemandTable');
+	widget: require('dgrid/OnDemandTable');
 	/id {
-		widget: require('d-list/Tree');
+		widget: require('dgrid/Tree');
 		sortable: true;
 		width: 100px;
 	};
@@ -27,29 +27,31 @@
 	};
 }
 
-.d-list-header {
+.dgrid-header {
 	font-size: 1.5em;
 	padding: 10px;
 }
-.d-list-row {
+.dgrid-row {
 	padding: 10px;
+	cursor: pointer;
+	height: 40px;
 }
-.d-list-row img{
+.dgrid-row img{
 	float: left;
 	margin-right: 10px;
 	height: 32px;
 	width: 32px;
 }
-.d-list-row .name{
+.dgrid-row .name{
 	float: left;
 	width: 400px;
 }
-.d-list-row .license {
+.dgrid-row .license {
 	float: left;
 	width: 100px;
 }
 
-.d-list-scroller {
+.dgrid-scroller {
 	top: 45px;
 }
 .branch-name {
@@ -87,7 +89,7 @@ input[type=range]{
 /* could also do @import /packages/my-widget/css/claro-for-widget.css screen and (rule: .claro)
 / or @import /packages/dijit/themes/claro/Checkbox.css screen and (not missing-module: dijit/form/Checkbox)*/
 
-.d-list-row:hover {
+.dgrid-row:hover {
 	-webkit-transition-property: background-color;
 	-webkit-transition-duration: .3s;
 	background-color: #eff;
@@ -96,10 +98,10 @@ input[type=range]{
 	float: right;
 	width: 150px;
 	border: 1px solid #aaa;
-	-webkit-border-radius: 5px;
+	border-radius: 5px;
 	padding: 5px;
 	margin: 5px;
-	-webkit-box-shadow: 1px 1px 2px #888;
+	box-shadow: 1px 1px 2px #888;
 	background: -webkit-gradient(linear, left top, left bottom, from(#def), to(#fff), color-stop(0.5, #fff));
 }
 #package-setup div{

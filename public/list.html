@@ -6,13 +6,14 @@
 <meta name="description" content="" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/ico" href="/favicon.ico"/> 
+<link rel="stylesheet" href="/packages/cpr/css/layout.css" media="screen">
+<link rel="stylesheet" href="/packages/cpr/css/app.css" media="screen">
  
 <!-- Javascripts --> 
 <!--  <script src="js/packages/requirejs/require.js"></script>-->
-<script data-dojo-config="async:true, loaderOnly: true, hasTests:{'dojo-boot':false}" src="/packages/dojo/dojo.js"></script>
+<script data-dojo-config='async:true' src="/packages/dojo/dojo.js"></script>
   <script>
-	require({baseUrl:"js", paths:{"require": "/packages/requirejs/require"}});
-    require(["packages!app"]);
+    require(["cpr/app"]);
   </script>
 </head> 
 <body> 
@@ -23,7 +24,7 @@
 	<a id="logo" href="/"></a> 
 	<div class="menu"> 
 		<ul> 
-			<li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/projects">Projects</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li><li><a href="http://my.dojofoundation.org/">Login</a></li>		</ul> 
+			<li><a href="http://dojofoundation.org/">Home</a></li><li><a href="http://dojofoundation.org/about">About</a></li><li><a href="http://dojofoundation.org/projects">Projects</a></li><li><a href="http://dojofoundation.org/blog">Blog</a></li><li><a href="http://dojofoundation.org/contact">Contact</a></li><li><a href="http://my.dojofoundation.org/">Login</a></li>		</ul> 
 	</div><!-- end of menu --> 
 </div><!-- end of header -->	
 	<div class="shadow-sep"></div><!-- end of shadow-sep --> 
