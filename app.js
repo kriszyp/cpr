@@ -1,5 +1,5 @@
 define(function(require){
-	var claApprovedRepos = ["dojo", "ibm", "kriszyp", "jrburke/require"];
+	var claApprovedRepos = ["dojo", "ibm", "kriszyp", "jrburke/require", "brandonpayton"];
 	var exceptRepos = ["kriszyp/slick"];
 	var claRegex = new RegExp("https://github.com/(" + claApprovedRepos.join("|") + ")");
 	var put = require("put-selector/put"); 
